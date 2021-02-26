@@ -86,17 +86,13 @@ func main() {
 		newIP, err := getOwnIP()
 		if err != nil {
 			log.Println(err.Error())
-		}
-
-		log.Println("I looked up following IP: " + newIP)
-		if oldIP != newIP {
-
+		} else if oldIP != newIP {
+			log.Println("I looked up following IP: " + newIP)
 			log.Println("New IP detected. Init DNS updates")
 			//no error handling this might be bad
 			initUpdate(newIP)
 			oldIP = newIP
 		} else {
-
 			log.Println("Same as old IP, no update needed, chill")
 		}
 	}

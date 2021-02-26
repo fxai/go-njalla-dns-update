@@ -3,6 +3,12 @@
 This is a small Njalla DNS updater. 
 It will grab the current external IP address and will update the defined DNS entries with that IP address.
 
+
+## Build for Docker
+```
+sudo docker buildx build --platform linux/arm64/v8 -t name/image:tag  --push .
+```
+
 ## Environment Variables
 
 You need to define 2 environment variables inside of your container:
